@@ -10,4 +10,23 @@
     <string name="menu_match">Match Scout</string>
     <string name="menu_pit">Pit Scout</string>
     <string name="menu_data">Data</string>
+
+    <string-array name="devices">
+        <item>choose here</item>
+        <item>red 1</item>
+        <item>red 2</item>
+        <item>red 3</item>
+        <item>blue 1</item>
+        <item>blue 2</item>
+        <item>blue 3</item>
+    </string-array>
+
+    <string-array name="teams">
+        <item>choose here</item>
+        <item>6</item>
+        <item>1057</item>
+        <item>213</item>
+        <item>8</item>
+        <item>5</item>
+    </string-array>
 </resources>
