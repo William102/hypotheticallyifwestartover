@@ -15,8 +15,7 @@ public class PitFragment extends Fragment {
 
     private FragmentPitBinding binding;
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentPitBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
         return root;

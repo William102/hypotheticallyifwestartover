@@ -22,4 +22,9 @@
         android:name="com.example.hypothetically.Fragments.DataFragment"
         android:label="@string/menu_data"
         tools:layout="@layout/fragment_data" />
+    <fragment
+        android:id="@+id/nav_activeMatch"
+        android:name="com.example.hypothetically.Fragments.MatchActiveFragment"
+        android:label="@string/menu_data"
+        tools:layout="@layout/fragment_match_active" />
 </navigation>
