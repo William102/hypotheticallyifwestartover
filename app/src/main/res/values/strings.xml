@@ -10,4 +10,14 @@
     <string name="menu_match">Match Scout</string>
     <string name="menu_pit">Pit Scout</string>
     <string name="menu_data">Data</string>
+
+    <string-array name="teamNumbers">
+        <item>701</item>
+        <item>6845</item>
+        <item>0000</item>
+        <item>9345</item>
+        <item>94533</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
