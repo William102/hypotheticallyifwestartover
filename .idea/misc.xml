@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+<<<<<<< HEAD
         <entry key="..\:/Users/Scouting/Documents/hypotheticallyifwestartover/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Users/Scouting/Documents/hypotheticallyifwestartover/app/src/main/res/layout/fragment_data.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Scouting/Documents/hypotheticallyifwestartover/app/src/main/res/layout/fragment_match.xml" value="0.20416666666666666" />
@@ -12,6 +13,10 @@
         <entry key="..\:/Users/Scouting/Documents/hypotheticallyifwestartover/app/src/main/res/layout/nav_header_main.xml" value="0.22" />
         <entry key="..\:/Users/Scouting/Documents/hypotheticallyifwestartover/app/src/main/res/menu/activity_main_drawer.xml" value="0.1" />
         <entry key="..\:/Users/Scouting/Documents/hypotheticallyifwestartover/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1125" />
+=======
+        <entry key="..\:/Users/Scouting/Documents/hypotheticallyifwestartover/app/src/main/res/layout/content_main.xml" value="0.1634963768115942" />
+        <entry key="..\:/Users/Scouting/Documents/hypotheticallyifwestartover/app/src/main/res/layout/fragment_match.xml" value="0.125" />
+>>>>>>> master
       </map>
     </option>
   </component>
