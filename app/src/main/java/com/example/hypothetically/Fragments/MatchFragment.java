@@ -4,53 +4,64 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-<<<<<<< HEAD
-import android.widget.ArrayAdapter;
-=======
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
->>>>>>> master
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
-import com.example.hypothetically.MainActivity;
 import com.example.hypothetically.R;
-import com.example.hypothetically.databinding.FragmentDataBinding;
 import com.example.hypothetically.databinding.FragmentMatchBinding;
-import com.example.hypothetically.databinding.MatchActiveBinding;
+
 
 public class MatchFragment extends Fragment implements AdapterView.OnItemSelectedListener {
     private Spinner deviceSpinner;
     private Spinner teamSpinner;
-
-<<<<<<< HEAD
-    private MatchActiveBinding binding;
-
-=======
     private FragmentMatchBinding binding;
->>>>>>> master
+    private int match = 1;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        binding = MatchActiveBinding.inflate(inflater, container, false);
+        binding = FragmentMatchBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
+        setupSpinners();
 
-        deviceSpinner = root.findViewById(R.id.spinner);
-        teamSpinner = root.findViewById(R.id.spinner2);
 
-        ArrayAdapter<CharSequence> deviceAdapter = ArrayAdapter.createFromResource(root.getContext(),R.array.devices,android.R.layout.simple_spinner_item);
-        deviceAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        deviceSpinner.setAdapter(deviceAdapter);
+        Button button = root.findViewById(R.id.startMatch);
+        Button plusButton = root.findViewById(R.id.button5);
+        Button minusButton = root.findViewById(R.id.button4);
+        TextView matchNum = root.findViewById(R.id.editTextTextPersonName2);
+        matchNum.setText(String.valueOf(match));
+        plusButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                match++;
+                matchNum.setText(String.valueOf(match));
+            }
+        });
 
-        deviceSpinner.setOnItemSelectedListener(this);
+        minusButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(match > 1) {
+                    match--;
+                    matchNum.setText(String.valueOf(match));
+                }
+            }
+        });
 
-        ArrayAdapter<CharSequence> teamAdapter = ArrayAdapter.createFromResource(root.getContext(),R.array.teams,android.R.layout.simple_spinner_item);
-        teamAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        teamSpinner.setAdapter(deviceAdapter);
-
-        teamSpinner.setOnItemSelectedListener(this);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavController navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment_content_main);
+                navController.navigate(R.id.nav_activeMatch);
+            }
+        });
 
         return root;
     }
@@ -59,10 +70,6 @@ public class MatchFragment extends Fragment implements AdapterView.OnItemSelecte
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
-
-        Spinner spinner = findViewById(R.id.spinner1);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.teamNumbers,android.R.layout.simple_spinner_dropdown_item);
-        adapter.SetDropDownViewResource()
     }
 
     @Override
@@ -74,5 +81,16 @@ public class MatchFragment extends Fragment implements AdapterView.OnItemSelecte
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
 
+    }
+    public void setupSpinners(){
+        View root = binding.getRoot();
+
+        teamSpinner = root.findViewById(R.id.spinner2);
+
+        ArrayAdapter<CharSequence> teamAdapter = ArrayAdapter.createFromResource(root.getContext(),R.array.teams,android.R.layout.simple_spinner_item);
+        teamAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        teamSpinner.setAdapter(teamAdapter);
+
+        teamSpinner.setOnItemSelectedListener(this);
     }
 }
